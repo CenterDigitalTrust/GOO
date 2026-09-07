@@ -81,7 +81,7 @@ Every agent run pushes three event types to Loki:
 Query in Grafana Explore: `{job="goovd-agent"}`. See `/docs/grafana-dashboard.md` for ready-made LogQL panels.
 
 ## 🎥 Demo
-[Demo video link] · [Downloadable build (Google Drive)]
+[Watch Demo on YouTube](https://youtu.be/OV_vnNMpubg) · [Downloadable build (Google Drive)]
 
 ## ⚠️ Notes
 - This repo contains no API keys or credentials — `google-keys.json`, `.env`, and `*.key` are gitignored.
