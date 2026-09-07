@@ -4,8 +4,13 @@ AI-native image & video generation desktop app, powered by Google Gemini + Verte
 
 GOOvd is a lightweight desktop "combine" for creative generation: type an idea, let an autonomous Gemini agent structure it into a director-quality prompt and decide when to trigger generation, then get a finished image or video back — all through your own API keys, no accounts, no lock-in.
 
+## 🎯 The Storyboarder Workflow: Before & After
+- **Before:** You're sketching in Figma or writing a script in Google Docs. You switch to a browser tab for Midjourney/Runway, type a prompt, wait, download the result, switch back to your editor, and drag it in. (5+ context switches per image).
+- **After:** GOOvd runs as a sleek, **always-on-top floating window** right over your workspace. Drop a reference frame directly into the app, generate a variation or video extension, and drag the result straight back out — zero tab switching, absolute focus.
+
 ## ✨ Features
 - **Agentic prompt structuring** — Gemini (gemini-3.6-flash) analyzes your raw prompt and preset selections (style, lighting, camera angle) and autonomously calls a generate_media tool via native function calling — the model decides when a prompt is detailed enough to generate, not a hardcoded rule.
+- **Always-on-top Floating UI** — Built for seamless integration with your existing tools. Hovers unobtrusively over your primary workspace (Figma, Premiere Pro, Google Docs) so you never lose context.
 - **Multi-model generation** — switch between: Google Imagen 3 (Fast / High Quality), Google Vertex Video (Veo) / Luma (Vertex) for video, with automatic fallback if Veo access isn't available.
 - **Continue Video** — extract the last frame of a generated clip and seamlessly continue it with a new prompt (image-to-video), up to 3 continuations per session.
 - **Style / Lighting / Camera presets** — one-click cinematic, macro, 3D, minimalist, and cyberpunk styles, each with a hand-tuned prompt fragment baked in.
@@ -33,8 +38,8 @@ The generation call is a genuine tool invocation inside a single Gemini agent tu
 | Layer | Tech |
 |---|---|
 | **Frontend** | React + TypeScript + Vite, TailwindCSS |
-| **Desktop shell** | Electron (Node.js) |
-| **Bridge** | IPC (Inter-Process Communication) |
+| **Desktop shell** | Electron (Node.js) — *Custom Frameless UI, Always-On-Top window management* |
+| **Bridge** | IPC (Inter-Process Communication) — *System-level drag-and-drop, dynamic window resizing* |
 | **Agent** | Gemini API (@google/genai), native function calling |
 | **Image/Video generation** | Vertex AI (Imagen 3, Veo), Luma (Vertex) |
 | **Observability** | Grafana Cloud (Loki push API) |
